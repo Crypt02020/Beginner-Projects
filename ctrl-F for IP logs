@@ -1,0 +1,12 @@
+import os
+read1 = open(input("Please input the directory location of your IP log"), 'r') #Works best if log files are located in easy-to-access directory
+read2 = open(input("Please input the directory location of your Apache log file"), 'r')
+read3 = open(input("Plrsdr imput the directory location of you IIS log file"), 'r')
+userinput = ("")
+while not userinput == ("Exit"): #This while loop will only terminate when the use types "Exit"
+    userinput = input("Enter IP address: ")
+    for log in [read1,read2,read3]:
+        if userinput in log.read():
+            print("Entry found")
+        else:
+            print(" Entry not Found")
