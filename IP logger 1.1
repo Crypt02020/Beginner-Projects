@@ -1,0 +1,16 @@
+import os
+read1 = open("Desktop\iplog.txt", 'r')
+read2 = open("Desktop\iplog2.txt", 'r')
+read3 = open("Desktop\IIslog.txt", 'r')
+userinput = ("")
+while not userinput == ("Exit"):
+    userinput = input("Enter IP address: ")
+    with open("Desktop\iplog.txt",'r') as read1, open("Desktop\iplog2.txt", 'r') as read2, open("Desktop\IIslog.txt", 'r') as read3:
+        for log in [read1,read2,read3]:
+            if userinput in log.read():
+                print("Entry found")
+            else:
+                print(" Entry not Found")
+                
+              
+#Fixed issue wherein entries would not be counted after first query. This is a rudementary script designed to demonstrate understanding of parsing files
